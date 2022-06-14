@@ -18,12 +18,18 @@ func TestSort(t *testing.T) {
 	for i, c := range cases {
 		t.Run(fmt.Sprintf("%+v", i), func(t *testing.T) {
 			as := assert.New(t)
-			act := Sort(c.inp)
+
+			act := BubbleSort(c.inp)
+			t.Logf("actual: %+v", act)
 			if !as.Equal(c.exp, act) {
 				return
 			}
+
+			act2 := SelectionSort(c.inp)
+			t.Logf("actual2: %+v", act2)
+			if !as.Equal(c.exp, act2) {
+				return
+			}
 		})
-
 	}
-
 }
