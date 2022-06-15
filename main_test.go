@@ -30,6 +30,12 @@ func TestSort(t *testing.T) {
 			if !as.Equal(c.exp, act2) {
 				return
 			}
+
+			act3 := MergeSort(c.inp)
+			t.Logf("actual3: %+v", act3)
+			if !as.Equal(c.exp, act3) {
+				return
+			}
 		})
 	}
 }
